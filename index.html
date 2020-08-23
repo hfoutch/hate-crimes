@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>New York Hate Crimes</title>
+  <meta name="description" content="A learning experience">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+<div id="message"></div>
+
+
+
+
+
+
+<!-- I'm actually learning this stuff right here!!! -->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script type="text/javascript">
+
+    $(document).ready(function () {
+      // console.log( "ready!" );
+      $.ajax({
+        dataType: "json",
+        url: "https://data.ny.gov/api/views/6xda-q7ev/rows.json",
+        error: function () {
+          $('#message').html('<p>Oh no! An error has occurred.</p>')
+        },
+        success: function () {
+          $("#message").html('<p>SUCCESS!!!!</p>') 
+        }
+      });
+
+    });
+
+  </script>
+</body>
+
+</html>
